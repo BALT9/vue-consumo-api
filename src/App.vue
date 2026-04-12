@@ -1,7 +1,14 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
+import { RouterLink, RouterView } from 'vue-router';
+
 </script>
 
 <template>
-  <HelloWorld />
+  <nav>
+    <RouterLink to="/">Inicio</RouterLink>
+    <RouterLink to="/products">Products</RouterLink>
+  </nav>
+
+  <RouterView />
 </template>
