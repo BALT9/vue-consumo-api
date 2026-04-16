@@ -19,7 +19,7 @@ onMounted(async () => {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
-        <div v-for="p in products" :key="p.id"
+        <div v-for="p in products" :key="p.id" 
             class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
 
             <!-- Imagen -->

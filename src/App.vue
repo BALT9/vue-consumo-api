@@ -23,6 +23,10 @@ import { RouterLink, RouterView } from 'vue-router';
         Products
       </RouterLink>
 
+      <RouterLink to="/recipes" class="hover:text-blue-600 transition" active-class="text-blue-600 font-semibold">
+        Recipes
+      </RouterLink>
+
     </div>
 
   </nav>
