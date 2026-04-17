@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { getProductosRequest } from '../services/products.service';
+import DetailsProd from '../components/Products/DetailsProd.vue';
 
 
 const products = ref([]);
@@ -55,11 +56,15 @@ onMounted(async () => {
                 </div>
 
                 <!-- Botón -->
-                <button class="mt-3 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition">
-                    Comprar
+                <button class="mt-3 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition cursor-pointer">
+                    Ver Mas info...
                 </button>
 
             </div>
+        </div>
+
+        <div>
+            <DetailsProd name="Willy" :age="22" />
         </div>
 
     </div>
