@@ -6,6 +6,8 @@ import DetailsProd from '../components/Products/DetailsProd.vue';
 
 const products = ref([]);
 
+const onModal = ref(false);
+
 onMounted(async () => {
     const res = await getProductosRequest();
     console.log(res.data);
@@ -17,10 +19,13 @@ onMounted(async () => {
 
 <template>
     <h1 class="text-3xl font-bold text-center my-6">Productos</h1>
+    <button class="bg-blue-500 text-white px-3 py-2 m-4 rounded-full cursor-pointer" @click="onModal = true">
+        Abrir Modal
+    </button>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
-        <div v-for="p in products" :key="p.id" 
+        <div v-for="p in products" :key="p.id"
             class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
 
             <!-- Imagen -->
@@ -63,9 +68,10 @@ onMounted(async () => {
             </div>
         </div>
 
-        <div>
-            <DetailsProd name="Willy" :age="22" />
+    </div>
+    <div>
+        <div v-if="onModal">
+            <DetailsProd name="Phone" :price="22.50" @close="onModal = false" />
         </div>
-
     </div>
 </template>
